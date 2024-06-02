@@ -1,29 +1,6 @@
-# VueCountApp
+🚀 Esta é a minha primeira aplicação Vue: um contador!
 
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+✨ Meu objetivo com este projeto foi dar os primeiros passos nos estudos do Vue.js.
+Nesse projeto, eu  explorei conceitos fundamentais como sistemas de condições, repetições 
+e o uso de arrays. Além disso, adicionei efeitos sonoros para uma imersão ainda mair. 
+Espero que gostem e que este seja o primeiro de muitos projetos Vue emocionantes! 💻🎉
