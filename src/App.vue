@@ -1,47 +1,33 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
   <main>
-    <TheWelcome />
+    <div>
+      <h3>The Current Count Is</h3>
+      <h1>0</h1>
+      <button>-</button>
+      <button>+</button>
+    </div>
   </main>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
+  main {
+    background: linear-gradient(120deg, rgb(255, 0, 0) 0%, rgb(24, 0, 0) 100%);
+    width: 100vw;
+    height: 100vh;
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+    align-items: center;
+    justify-content: center;
   }
 
-  .logo {
-    margin: 0 2rem 0 0;
+  div {
+    background: linear-gradient(120deg, rgba(255,255,255,1) 30%, rgb(243, 243, 243) 100%);
+    padding: 40px;
+    box-shadow: 13px 17px 15px -8px rgba(0,0,0,0.75);
+    text-align: center;
+    border-radius: 20px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: rgb(93, 93, 93);    
   }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>
