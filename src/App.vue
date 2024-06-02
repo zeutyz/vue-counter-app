@@ -7,14 +7,16 @@
   const addToCount = () => {
       count.value++;
       updateProgressBar()
+      playSound();
   };
 
   const subtractFromCount = () => {
     count.value--;
     updateProgressBar()
+    playSound();
   };
 
-  function updateProgressBar() {
+  const updateProgressBar = () => {
     if (count.value > 100) {
       progressBar.value = 100;
     } else if (count.value < 0) {
@@ -23,6 +25,14 @@
       progressBar.value =  count.value;
     }
   }
+
+  const playSound = () => {
+    const sounds = [new Audio('src/assets/sfx/click-sfx.wav'), new Audio('src/assets/sfx/update-number-sfx.wav')];
+    for (let i = 0; i < sounds.length; i++) {
+      sounds[i].play();
+      console.log("/n" + i);
+    }
+  };
 
 </script>
 
@@ -116,6 +126,11 @@
 
     &:hover {
       transform: scale(1.02);
+      transition: transform 0.2s ease;
+    }
+
+    &:active {
+      transform: scale(0.96);
       transition: transform 0.2s ease;
     }
   }
