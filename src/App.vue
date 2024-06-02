@@ -30,7 +30,6 @@
     const sounds = [new Audio('src/assets/sfx/click-sfx.wav'), new Audio('src/assets/sfx/update-number-sfx.wav')];
     for (let i = 0; i < sounds.length; i++) {
       sounds[i].play();
-      console.log("/n" + i);
     }
   };
 
@@ -204,8 +203,8 @@
   .progress-circle {
     stroke: rgb(168, 0, 0);
     stroke-width: 17px;
-    stroke-dasharray: 660;
-    stroke-dashoffset: calc(660 - (v-bind(progressBar) * 6.6));
+    stroke-dasharray: 635;
+    stroke-dashoffset: calc(635 - (v-bind(progressBar) * 6.35));
     transition: stroke-dashoffset 0.5s ease;
   }
 
