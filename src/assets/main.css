@@ -1,0 +1,9 @@
+body {
+    background: linear-gradient(120deg, rgb(145, 29, 29) 0%, rgb(0, 0, 0) 100%);
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
