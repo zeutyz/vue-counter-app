@@ -2,14 +2,27 @@
   import { ref } from "vue";
 
   let count = ref(0);
+  let progressBar = ref(0);
 
   const addToCount = () => {
-    count.value++;
+      count.value++;
+      updateProgressBar()
   };
 
   const subtractFromCount = () => {
     count.value--;
+    updateProgressBar()
   };
+
+  function updateProgressBar() {
+    if (count.value > 100) {
+      progressBar.value = 100;
+    } else if (count.value < 0) {
+      progressBar.value = 0;
+    } else {
+      progressBar.value =  count.value;
+    }
+  }
 
 </script>
 
@@ -23,7 +36,7 @@
         <div class="box-circle">
           <svg>
             <circle cx="115" cy="112" r="101"  class="background-circle"></circle>
-            <circle cx="115" cy="112" r="101"></circle>            
+            <circle cx="115" cy="112" r="101" class="progress-circle"></circle>            
           </svg>
         </div>
         <h1>
@@ -41,7 +54,7 @@
 
   main {
     background: linear-gradient(130deg, rgb(255, 255, 255) 0%, rgb(211, 211, 211) 100%);
-    box-shadow: 20px 10px 10px  rgba(17, 0, 0, 0.884);
+    box-shadow: 12px 10px 16px  rgba(17, 0, 0, 0.884);
 
     padding: 22.5px;
     border-radius: 4.5px;
@@ -158,14 +171,7 @@
   }
 
   circle {
-
     fill: none;
-    stroke: rgb(168, 0, 0);
-    stroke-width: 17px;
-    stroke-dasharray: 660;
-    stroke-dashoffset: 60;
-    transition: stroke-dashoffset 1s ease-in-out;
-
   }
 
   .background-circle {
@@ -178,6 +184,14 @@
     transition: stroke-dashoffset 1s ease-in-out;
     position: relative;
     filter: drop-shadow(3px 6px 3px rgba(34, 34, 34, 0.158));
+  }
+
+  .progress-circle {
+    stroke: rgb(168, 0, 0);
+    stroke-width: 17px;
+    stroke-dasharray: 660;
+    stroke-dashoffset: calc(660 - (v-bind(progressBar) * 6.6));
+    transition: stroke-dashoffset 0.5s ease;
   }
 
 </style>
